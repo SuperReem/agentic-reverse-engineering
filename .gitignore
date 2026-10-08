@@ -1,0 +1,17 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+dist/
+*.egg-info/
+traces/
+analysis_history/
+analysis.json
+/graph.png
+test_program
+*.dSYM/
+docs/
+demo_debug.dSYM
+samples/

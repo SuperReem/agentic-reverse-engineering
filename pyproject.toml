@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "binary-insight"
+version = "0.2.0"
+description = "Observable multi-agent binary analysis with bounded experimentation"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "langgraph==1.2.14",
+  "langchain==1.4.3",
+  "langchain-openai==1.6.7",
+  "pydantic==2.13.5",
+  "python-dotenv==1.2.4",
+]
+
+[project.optional-dependencies]
+instrumentation = ["frida>=17,<18"]
+
+[project.scripts]
+binary-insight = "binary_insight.ui:main"
+binary-analyze = "binary_insight.main:main"
+binary-graph = "binary_insight.graph:main"
+
+[dependency-groups]
+dev = ["pytest>=8.3,<10", "ruff>=0.12,<1"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/binary_insight"]
+force-include = { "web" = "binary_insight/web", "config/pricing.json" = "binary_insight/pricing.json" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]

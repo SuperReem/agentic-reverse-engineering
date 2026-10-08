@@ -1,0 +1,51 @@
+{
+  "updated_at": "2026-10-07",
+  "source": "https://developers.openai.com/api/docs/pricing",
+  "currency": "USD",
+  "service_tier": "standard",
+  "notes": "Estimates for text-only standard processing. Configure exact model rates; missing models remain unpriced. Cache-write billing requires provider cache-write counts. Regional uplifts excluded.",
+  "models": {
+    "gpt-5.6-sol": {
+      "input": 4,
+      "cached_input": 0.4,
+      "cache_write": 5,
+      "output": 20,
+      "cache_write_required": true,
+      "long_context_threshold": 272000,
+      "long_context": {
+        "input": 8,
+        "cached_input": 0.8,
+        "cache_write": 10,
+        "output": 30
+      }
+    },
+    "gpt-5.6-cyber": {
+      "input": 12.5,
+      "cached_input": 1.25,
+      "cache_write": 15.625,
+      "output": 75,
+      "cache_write_required": true
+    },
+    "gpt-5.3-codex": {
+      "input": 1.75,
+      "cached_input": 0.175,
+      "output": 14
+    },
+    "gpt-5.6": {
+      "input": 4,
+      "cached_input": 0.4,
+      "cache_write": 5,
+      "output": 20,
+      "cache_write_required": true,
+      "long_context_threshold": 272000,
+      "long_context": {
+        "input": 8,
+        "cached_input": 0.8,
+        "cache_write": 10,
+        "output": 30
+      },
+      "alias_of": "gpt-5.6-sol",
+      "alias_source": "https://developers.openai.com/api/docs/models/gpt-5.6-sol"
+    }
+  }
+}

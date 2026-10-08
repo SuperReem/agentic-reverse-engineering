@@ -1,0 +1,6 @@
+# Compatibility with pip. Prefer `uv sync --locked` for the full dependency lock.
+langgraph==1.2.14
+langchain==1.4.3
+langchain-openai==1.6.7
+pydantic==2.13.5
+python-dotenv==1.2.4
